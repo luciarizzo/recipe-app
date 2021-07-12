@@ -1,6 +1,7 @@
 //import logo from './logo.svg';
 import { useEffect, useState } from "react";
-import Recipe from "./Recipe";
+import Recipe from "./components/Recipe/Recipe";
+import logo from "./img/logo.png";
 import './App.css';
 
 const App = () => {
@@ -10,6 +11,7 @@ const App = () => {
    // const [counter, setCounter] =  useState(0);
     const [search, setSearch] = useState('');
     const [query, setQuery] = useState('');
+    const [welcome, setWelcome] = useState("Welcome! Write an ingredient and recipes will show up");
 
     useEffect(() => {
       getRecipes();
@@ -28,15 +30,22 @@ const App = () => {
 
     const getSearch = e => {
       e.preventDefault();
+      setWelcome("");
       setQuery(search);
       setSearch('');
     }
     return (
     <div className="App">
-      <form onSubmit={getSearch} className="search-form">
-        <input className="search-bar" type="text" value={search} onChange={updateSearch}/>
-        <button  className="search-button" type="submit">Search</button>
-      </form>
+      <div className="header">
+        <img src={logo}/>
+        <form onSubmit={getSearch} className="search-form">
+          <input className="search-bar" type="text" value={search} onChange={updateSearch}/>
+          <button className="search-button" type="submit">Search</button>
+        </form>
+      </div>
+      <div className="welcome">
+        <p>{welcome}</p>
+      </div>
       <div className="recipes">
       {recipes.map(recipe => (
         <Recipe 

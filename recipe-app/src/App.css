@@ -3,11 +3,27 @@
   background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
 }
 
-.search-form{
-  min-height: 10vh;
+.header {
   display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.header img {
+  width: 10%;
+  padding: 10px 200px 10px 80px;
+}
+
+.header .search-form{
+  min-height: 10vh;
+  width: 100%;
+  /*display: flex;
   justify-content: center;
   align-items: center;
+  align-content: center;*/
 }
 
 .search-bar{
@@ -28,8 +44,58 @@
   background-color: lightslategray;
 }
 
+.welcome {
+  text-align: center;
+  align-content: center;
+}
+
+.welcome p{
+  font-size: 20px;
+}
+
+
 .recipes{
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+}
+
+@media all and (max-width: 768px)
+{
+  .header {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+  }
+  
+  .header img {
+    width: 30%;
+    padding: 10px;
+  }
+  
+  .header .search-form{
+    min-height: 10vh;
+    width: 60%;
+    flex-wrap: nowrap;
+    /*display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;*/
+  }
+  
+  .search-bar{
+    width: 40%;
+    border: 0;
+    padding: 10px;
+  }
+  
+  .search-button{
+    background: lightcoral;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
 }
